@@ -38,13 +38,3 @@ PromiseAllPolyfill([
   delay(1000, 'd')
 ])
 .then(console.log,  console.error) // "Some error Occured"
-
-// check that error rejects asap
-// all([
-//   delay(100, 'a'),
-//   delay(200, 'b'),
-//   Promise.reject(Error('bad things happened')),
-//   delay(50, 'c'),
-//   delay(1000, 'd')
-// ])
-// .then((res) => console.log("response final >>", res), (err) => console.log("response error final >>", err)); // Error: bad things happened
