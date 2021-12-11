@@ -1,0 +1,12 @@
+//es6 code to convert any string into JSON Object without using JSON.parse()
+let convertToObj = (str) => {
+  return
+  str.split(',') //can also use any other separator depending on the string structure
+  .map(i => i.split('=') //can also use : depending on key value pair separator type in the original string
+  .reduce((acc, [i,j]) => {
+    acc[i.trim()] = j.trim();
+    return acc;  
+  }, {});
+}
+let data = 'name = roshni, age = 25'; 
+convertToObj(data); //{name: 'roshni', age: '25'}
