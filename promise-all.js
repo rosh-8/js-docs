@@ -4,7 +4,7 @@ function PromiseAllPolyfill(promiseArray) {
   return new Promise(function(resolve,reject) {
     var count = promiseArray.length-1
     var promiseResult = []
-    promises.forEach(function(promise, index) {
+    promiseArray.forEach(function(promise, index) {
         promise.then(
           function(val) { 
               result.push(val) //push values to results array
