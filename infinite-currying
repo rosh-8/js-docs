@@ -1,0 +1,15 @@
+function add(...args) {
+    let a = args.reduce((a,b) => a+b, 0);
+    console.log(a, 'check a'); //a is the accumulator
+    return function(...args) {
+    let b = args.reduce((a,b) => a+b, 0);  //a is the accumulator
+    console.log(b, 'check b');
+    if (b) {
+        return add(a+b);    
+    }
+    return a
+    }
+}
+
+console.log(add(1,2,3,4)(1,2,3,4)());
+console.log(add(1)(2)(3)(4)());
